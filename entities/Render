@@ -1,0 +1,78 @@
+{
+  "name": "Render",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "description": "Associated project ID"
+    },
+    "original_image_url": {
+      "type": "string",
+      "description": "Original uploaded image URL"
+    },
+    "generated_image_url": {
+      "type": "string",
+      "description": "AI-generated image URL"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Generated video walkthrough URL"
+    },
+    "style": {
+      "type": "string",
+      "enum": [
+        "modern",
+        "minimalist",
+        "luxury",
+        "scandinavian",
+        "african_contemporary",
+        "industrial",
+        "smart_home"
+      ],
+      "description": "Design style applied"
+    },
+    "room_type": {
+      "type": "string",
+      "enum": [
+        "living_room",
+        "bedroom",
+        "kitchen",
+        "bathroom",
+        "office",
+        "dining_room",
+        "exterior",
+        "balcony"
+      ],
+      "description": "Type of room"
+    },
+    "render_type": {
+      "type": "string",
+      "enum": [
+        "staging",
+        "architecture",
+        "video"
+      ],
+      "default": "staging",
+      "description": "Type of render"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "processing",
+        "completed",
+        "failed"
+      ],
+      "default": "processing",
+      "description": "Current status"
+    },
+    "prompt_used": {
+      "type": "string",
+      "description": "AI prompt that was used"
+    }
+  },
+  "required": [
+    "original_image_url",
+    "style",
+    "room_type"
+  ]
+}
